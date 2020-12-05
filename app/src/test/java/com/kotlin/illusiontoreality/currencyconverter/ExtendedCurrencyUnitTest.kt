@@ -6,7 +6,7 @@ import org.junit.Test
 
 import org.junit.Assert.*
 
-class ExtendedCurrency {
+class ExtendedCurrencyUnitTest {
 
     private lateinit var currecies: AllCurencies
 
