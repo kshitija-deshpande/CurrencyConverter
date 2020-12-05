@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity= "center"
+        android:textSize="16sp"
+        android:padding="10dp"
+        android:textColor="@color/colorPrimary"
+        android:text="Select Currency"/>
+    <View
+        android:id="@+id/line"
+        android:layout_below="@id/title"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@color/colorPrimary"/>
+    <ListView
+        android:id="@+id/lv"
+        android:layout_below="@id/line"
+        android:layout_above="@id/close_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="fill_parent"/>
+    <Button
+        android:id="@+id/close_btn"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:text="Close"
+        android:textColor="#FFFFFF"/>
+</RelativeLayout>

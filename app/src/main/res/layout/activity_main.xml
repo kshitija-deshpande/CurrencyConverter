@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary">
+
+    <TextView
+        android:id="@+id/updated_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Last Updated: Dec 3, 2020. 10:12"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="10sp"
+        android:layout_marginTop="10dp"
+        android:gravity="center_horizontal" />
+
+    <LinearLayout
+        android:id="@+id/currency_flag_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:orientation="horizontal"
+        android:layout_below="@+id/updated_text"
+        android:background="@drawable/currancy_flag_layout_background"
+        android:layout_marginTop="30dp"
+        android:paddingBottom="15dp"
+        android:paddingTop="15dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:weightSum="3">
+
+        <LinearLayout
+            android:id="@+id/source_currency"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:layout_marginLeft="10dp"
+            android:padding="10dp"
+            android:gravity="center"
+            android:background="@drawable/individual_currency_background">
+            <TextView
+                android:id="@+id/src_code"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="USD($) "
+                android:textSize="16sp"
+                android:gravity="center"
+                android:textColor="#FFFFFF"/>
+            <ImageView
+                android:id="@+id/src_flag"
+                android:layout_width="30dp"
+                android:layout_height="20dp"
+                android:scaleType="fitXY"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:src="@drawable/flag_usd"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:layout_gravity="center">
+            <ImageButton
+                android:id="@+id/exchange_button"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#00000000"
+                android:src="@drawable/convert_symbol"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/destination_currency"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:padding="10dp"
+            android:orientation="horizontal"
+            android:layout_marginRight="10dp"
+            android:gravity="center"
+            android:background="@drawable/individual_currency_background">
+            <TextView
+                android:id="@+id/dest_code"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="EUR($) "
+                android:textSize="16sp"
+                android:gravity="center"
+                android:textColor="#FFFFFF"/>
+            <ImageView
+                android:id="@+id/dest_flag"
+                android:layout_width="30dp"
+                android:layout_height="20dp"
+                android:scaleType="fitXY"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:src="@drawable/flag_eur"/>
+        </LinearLayout>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/input_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/currency_flag_layout"
+        android:background="@drawable/edit_text_fields_gradient_background"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp"
+        android:padding="20dp"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:weightSum="2">
+
+                <EditText
+                    android:id="@+id/source_currency_edit_text"
+                    android:layout_width="40dp"
+                    android:layout_height="wrap_content"
+                    android:maxLines="1"
+                    android:textColor="#000000"
+                    android:gravity="center"
+                    android:inputType="numberDecimal"
+                    android:layout_marginRight="40dp"
+                    android:layout_marginLeft="40dp"
+                    android:layout_weight="1"
+                    android:text="0"
+                    android:background="@drawable/edit_text_rounded_background" />
+
+                <EditText
+                    android:id="@+id/destination_currency_edit_text"
+                    android:layout_width="40dp"
+                    android:layout_height="wrap_content"
+                    android:maxLines="1"
+                    android:textColor="#000000"
+                    android:gravity="center"
+                    android:focusable="false"
+                    android:inputType="numberDecimal"
+                    android:layout_marginRight="40dp"
+                    android:layout_marginLeft="40dp"
+                    android:layout_weight="1"
+                    android:text="0"
+                    android:background="@drawable/edit_text_rounded_background" />
+
+    </LinearLayout>
+
+
+
+
+<!--    Buttons-->
+    <LinearLayout
+        android:id="@+id/currency_button_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_below="@id/input_layout"
+        android:weightSum="2">
+        <Button
+            android:id="@+id/live_button"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_margin="4dp"
+            android:textColor="@drawable/button_color_selector"
+            android:background="@drawable/button_selector"
+            android:text="LIVE"/>
+
+        <Button
+            android:id="@+id/chart_button"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_margin="4dp"
+            android:textColor="@drawable/button_color_selector"
+            android:background="@drawable/button_selector"
+            android:text="CHART"/>
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#FFFFFF"
+        android:layout_below="@+id/currency_button_layout">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="visible"
+            android:layout_above="@id/update_button"/>
+
+        <ProgressBar
+            android:id="@+id/progress_bar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/chart_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/update_button"
+            android:gravity="center"
+            android:textColor="@color/colorPrimary"
+            android:visibility="gone"
+            android:text="Coming Soon..." />
+
+        <Button
+            android:id="@+id/update_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_margin="4dp"
+            android:textColor="@drawable/button_color_selector"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/button_selector"
+            android:text="UPDATE"/>
+
+    </RelativeLayout>
+
+</RelativeLayout>
